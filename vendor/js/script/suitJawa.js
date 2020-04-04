@@ -16,7 +16,6 @@ while (help) {
   } else {
     comp = "orang";
   }
-  // console.log(comp);
   // rule permainan suit
   var result = "";
 
@@ -24,23 +23,11 @@ while (help) {
     result = "SERI !";
   } else if (input !== null) {
     if (input === "gajah") {
-      if (comp === "semut") {
-        result = "KALAH !";
-      } else {
-        result = "MENANG !";
-      }
+      result = comp === "semut" ? "KALAH !" : "MENANG !";
     } else if (input === "semut") {
-      if (comp === "gajah") {
-        result = "MENANG !";
-      } else {
-        result = "KALAH !";
-      }
+      result = comp === "gajah" ? "MENANG !" : "KALAH !";
     } else if (input === "orang") {
-      if (comp === "semut") {
-        result = "MENANG !";
-      } else {
-        result = "KALAH !";
-      }
+      result = comp === "semut" ? "MENANG!" : "KALAH !";
     } else {
       result = "Inputan yang anda masukkan salah!";
     }

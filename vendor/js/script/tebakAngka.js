@@ -10,11 +10,7 @@ while (loop) {
 
   // rule dari permainan tebak angka
   if (choice <= 10) {
-    if (choice === comp) {
-      result = "Tebakan kamu benar!";
-    } else {
-      result = "Tebakan kamu salah!";
-    }
+    result = choice === comp ? "Tebakan kamu benar!" : "Tebakan kamu salah"; // menggunakan ternary operator
     alert(
       "Tebakan kamu adalah " +
         choice +
@@ -24,13 +20,11 @@ while (loop) {
         result
     );
     var helper = i++;
-    if (helper < 3) {
-      loop = confirm("Tebak lagi?");
-    } else {
-      alert("Kesempatan anda sudah habis. Terimakasih telah bermain");
-      loop = false;
-    }
-    console.log(helper);
+    loop =
+      helper < 3
+        ? confirm("Tebak lagi?")
+        : false +
+          alert("Kesempatan anda sudah habis. Terimakasih telah bermain"); // menggunakan ternary operator
   } else {
     alert("Anda hanya boleh memasukkan angka 1 sampai 10 saja");
     loop = confirm("Coba lagi?");
